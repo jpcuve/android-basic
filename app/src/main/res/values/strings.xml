@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">android-basic</string>
+    <string name="had_seizures">I had one or more seizures today</string>
+    <string name="did_not_have_seizures">I did not have any seizure today</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
+</resources>
