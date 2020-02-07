@@ -15,7 +15,9 @@ class MainActivity : AppCompatActivity() {
         textView.setText("Bazaar")
         button2.setOnClickListener{
             Log.d("BASIC", "Button 2 clicked")
-            val intent = Intent(this@MainActivity, SeizureActivity::class.java)
+            val intent = Intent(this@MainActivity, SeizureActivity::class.java).apply {
+                putExtra("seizure_summary", SeizureSummary("mild"))
+            }
 //            val intent = Intent("com.messio.basic.SeizureActivity")
             startActivity(intent)
         }
