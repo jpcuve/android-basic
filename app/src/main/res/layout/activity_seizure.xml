@@ -11,13 +11,13 @@
         android:layout_height="wrap_content">
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/oneMoreSeizuresRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/had_seizures" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/noSeizureRadioButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/did_not_have_seizures" />
