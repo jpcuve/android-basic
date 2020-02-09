@@ -1,5 +1,9 @@
 package com.messio.basic
 
+object Constants {
+    val NAME = "BASIC"
+}
+
 fun sum(a: Int, b: Int): Int = a + b
 
 fun max(a: Int, b: Int): Int = if (a > b) a else b

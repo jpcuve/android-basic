@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         textView.setText("Bazaar")
         button2.setOnClickListener{
-            Log.d("BASIC", "Button 2 clicked")
+            Log.d(Constants.NAME, "Button 2 clicked")
             val intent = Intent(this@MainActivity, SeizureActivity::class.java).apply {
                 putExtra("seizure_summary", SeizureSummary())
             }

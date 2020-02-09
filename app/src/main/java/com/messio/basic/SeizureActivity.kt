@@ -14,26 +14,21 @@ class SeizureActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_seizure)
         val parcelableExtra = intent?.getParcelableExtra<SeizureSummary>("seizure_summary")
-        parcelableExtra?.let {
-            Log.d("BASIC", "Intent found: $it")
-            it.multiple?.let {
-                oneMoreSeizuresRadioButton.setChecked(it)
-                noSeizureRadioButton.setChecked(!it)
-            }
-        }
         backButton.setOnClickListener {
             startActivity(Intent(this@SeizureActivity, MainActivity::class.java))
         }
         nextButton.setOnClickListener {
             if (!oneMoreSeizuresRadioButton.isChecked() && !noSeizureRadioButton.isChecked()){
-                Log.d("BASIC", "No choice...")
-                val alertDialogBuilder = AlertDialog.Builder(this).apply {
+                Log.d(Constants.NAME, "No choice...")
+                AlertDialog.Builder(this).apply {
                     setTitle("Dialogue")
                     setMessage(R.string.dummy_content)
+                    setNegativeButton(R.string.cancel, { dialog, _ -> dialog.cancel() })
                     show()
                 }
             } else {
                 startActivity(Intent(this@SeizureActivity, SummaryActivity::class.java).apply {
+                    parcelableExtra?.multiple = oneMoreSeizuresRadioButton.isChecked
                     putExtra("seizure_summary", parcelableExtra)
                 })
             }
