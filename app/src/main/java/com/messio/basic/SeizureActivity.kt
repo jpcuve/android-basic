@@ -34,4 +34,6 @@ class SeizureActivity : AppCompatActivity() {
             }
         }
     }
+
+    
 }
